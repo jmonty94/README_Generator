@@ -91,7 +91,9 @@ function writeToFile(data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    console.log("hello world");
+    inquirer.prompt(questions).then((inquirerResponses) => {
+        console.log(inquirerResponses);
+    })
 }
 
 // Function call to initialize app
