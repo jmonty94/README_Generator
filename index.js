@@ -1,8 +1,8 @@
 // TODO: Include packages needed for this application
-// const fs = require("fs")
-import fs from "node:fs"
-import inquirer from "inquirer"
-import { type } from "node:os";
+const fs = require("node:fs");
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -11,18 +11,8 @@ const questions = [
         type: "input",
     },
     {
-        message: "What was the motivation behind the project?",
+        message: "Please describe your project including the motivation behind creating it and what problem it solves?",
         name: "motivation",
-        type: "input",
-    },
-    {
-        message: "Why did you build this project?",
-        name: "why",
-        type: "input",
-    },
-    {
-        message: "What problem does it solve?",
-        name: "problem",
         type: "input",
     },
     {
@@ -41,12 +31,6 @@ const questions = [
         message: "Would you like to provide screenshots",
         name: "screenshots",
         type: "confirm",
-    },
-    {
-        message: "If yes please provide the file path of the screenshot within the repo",
-        name: "screenPath",
-        type: "input",
-        default: "",
     },
     {
         message: "What does the user need to know regarding using the repo",
@@ -83,7 +67,7 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(data) {
+function writeToFile(fileName, data) {
     fs.writeFile("./output/README.md", data, () => {
 
     })
@@ -93,6 +77,8 @@ function writeToFile(data) {
 function init() {
     inquirer.prompt(questions).then((inquirerResponses) => {
         console.log(inquirerResponses);
+        console.log("Generating README please wait.");
+        writeToFile('README.md', generateMarkdown({...inquirerResponses }));
     })
 }
 
