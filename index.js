@@ -28,11 +28,6 @@ const questions = [
         default: "npm test"
     },
     {
-        message: "Would you like to provide screenshots",
-        name: "screenshots",
-        type: "confirm",
-    },
-    {
         message: "What does the user need to know regarding using the repo",
         name: "usage",
         type: "input",
@@ -59,11 +54,6 @@ const questions = [
         name: "email",
         type: "input",
     },
-    // {
-    //     message: ,
-    //     name: ,
-    //     type: ,
-    // },
 ];
 
 // TODO: Create a function to write README file
