@@ -19,7 +19,7 @@
 ​
 ### The challenge
 ​
-This is collaborative project to create a real world front end application by showcasing skills we have acquired. The project aims to solve real world problems with intuitive user experience and meaningful information.
+To create a README generator that would allow users to input answers in the terminal and have a finished README returned
 ​
 ### User Story
 ​
