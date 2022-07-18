@@ -1,4 +1,4 @@
-# README Generator
+# READMEs_Made_Easy
 ​
 ## Table of contents
 ​
